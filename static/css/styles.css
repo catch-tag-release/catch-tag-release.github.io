@@ -8,30 +8,24 @@ body, html {
   text-align: center;
 }
 
-/* h1 {
-  font-weight: normal;
-  font-size: 4em;
-  font-family: 'Raleway', sans-serif;
-  margin: 0 auto;
-  margin-top: 30px;
-  width: 500px;
-  color: #F90;
-  text-align: center;
-} */
-
 h1 {
-  font-weight: normal;
-  font-size: 4em;
-  /* font-family: 'Raleway', sans-serif; */
   font-family: 'Google Sans', sans-serif;
-  margin: 0 auto;
-  margin-top: 30px;
-  width: 100%;
-  /* color: #F90; */
+  font-size: 2.8rem;
+  max-width: 100%;
+  margin: 0.5 auto;
+  line-height: 1.2;
+  color: white;
   text-align: center;
+  padding: 0 10px;
 }
 
-/* Animation */
+/* Ensure title text is responsive */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.2rem;
+  }
+}
+
 @keyframes myfirst {
   0% {margin-left: -235px}
   70% {margin-left: 100%;}
@@ -76,16 +70,16 @@ header {
 
 #message {
   margin-top: 200px;
-  background: transparent; /* Make the background transparent */
+  background: transparent; 
   
   font-family: 'Google Sans', sans-serif;
 }
 
 #message p {
-  font-size: 1.5rem; /* Slightly smaller text */
-  color: white; /* White text */
+  font-size: 1.5rem;
+  color: white;
   text-align: center;
-  margin-top: 0; /* Remove extra top margin */
+  margin-top: 0; 
 }
 
 #form h1 {
@@ -95,6 +89,34 @@ header {
   line-height: 1.2;
   color: white;
   text-align: center;
+}
+
+@media (max-width: 800px) {
+  body, html {
+    height: 122%;
+    overflow: hidden;
+  }
+
+  #form {
+    height: 80%;
+  }
+
+  #message {
+    margin-top: 20%;
+  }
+
+  h1 {
+    font-size: 2.2rem; /* Adjust title size for mobile */
+    width: 100%;
+  }
+}
+
+
+/* Desktop-specific styles */
+@media (min-width: 769px) {
+  h1 {
+    font-size: 3rem;  /* Larger title on desktops */
+  }
 }
 
 
