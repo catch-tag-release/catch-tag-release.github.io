@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Two prominent features of large language models (LLMs) is the presence of large-norm (outlier) features and the tendency for tokens to attend very strongly to a select few tokens. Despite often having no semantic relevance, these select tokens, called attention sinks, along with the large outlier features, have proven important for model performance, compression, and streaming. Consequently, investigating the roles of these phenomena within models and exploring how they might manifest in the model parameters has become an area of active interest. Through an empirical investigation, we demonstrate that attention sinks utilize outlier features to: catch a sequence of tokens, tag the captured tokens by applying a common perturbation, and then release the tokens back into the residual stream, where the tagged tokens are eventually retrieved. We prove that simple tasks, like averaging, necessitate the ‘catch, tag, release’ mechanism hence explaining why it would arise organically in modern LLMs. Our experiments also show that the creation of attention sinks can be completely captured in the model parameters using low-rank matrices, which has important implications for model compression and substantiates the success of recent approaches that incorporate a low-rank term to offset performance degradation.">
+  <meta property="og:title" content="Attention Sinks and Outlier Features: A ‘Catch, Tag, and Release’ Mechanism for Embeddings"/>
+  <meta property="og:description" content="Two prominent features of large language models (LLMs) is the presence of large-norm (outlier) features and the tendency for tokens to attend very strongly to a select few tokens. Despite often having no semantic relevance, these select tokens, called attention sinks, along with the large outlier features, have proven important for model performance, compression, and streaming. Consequently, investigating the roles of these phenomena within models and exploring how they might manifest in the model parameters has become an area of active interest. Through an empirical investigation, we demonstrate that attention sinks utilize outlier features to: catch a sequence of tokens, tag the captured tokens by applying a common perturbation, and then release the tokens back into the residual stream, where the tagged tokens are eventually retrieved. We prove that simple tasks, like averaging, necessitate the ‘catch, tag, release’ mechanism hence explaining why it would arise organically in modern LLMs. Our experiments also show that the creation of attention sinks can be completely captured in the model parameters using low-rank matrices, which has important implications for model compression and substantiates the success of recent approaches that incorporate a low-rank term to offset performance degradation."/>
+  <meta property="og:url" content="https://www.catch-tag-release.github.io"/>
+  <meta property="og:image" content="static/images/catch-tag-release-teaser.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta name="twitter:title" content="Attention Sinks and Outlier Features: A ‘Catch, Tag, and Release’ Mechanism for Embeddings">
+  <meta name="twitter:description" content="Two prominent features of large language models (LLMs) is the presence of large-norm (outlier) features and the tendency for tokens to attend very strongly to a select few tokens. Despite often having no semantic relevance, these select tokens, called attention sinks, along with the large outlier features, have proven important for model performance, compression, and streaming. Consequently, investigating the roles of these phenomena within models and exploring how they might manifest in the model parameters has become an area of active interest. Through an empirical investigation, we demonstrate that attention sinks utilize outlier features to: catch a sequence of tokens, tag the captured tokens by applying a common perturbation, and then release the tokens back into the residual stream, where the tagged tokens are eventually retrieved. We prove that simple tasks, like averaging, necessitate the ‘catch, tag, release’ mechanism hence explaining why it would arise organically in modern LLMs. Our experiments also show that the creation of attention sinks can be completely captured in the model parameters using low-rank matrices, which has important implications for model compression and substantiates the success of recent approaches that incorporate a low-rank term to offset performance degradation.">
+  <meta name="twitter:image" content="static/images/catch-tag-release-teaser.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="keywords" content="Catch, Tag, Release, Mechanism, Theory, LLM">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Catch, Tag, and Release</title>
+  <link rel="stylesheet" href="static/css/styles.css">
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico?v=2">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  
+</head>
+<body>
+<header>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title" style="font-size: 2.8rem; max-width: 100%; margin: 0.5 auto; line-height: 1.2;">
+              <img src="static/images/fish.png" alt="" style="width: 1.1em; height: 1.1em; vertical-align: middle; margin-right: 0.1em; margin-bottom: 0.40em;">
+              Attention Sinks and Outlier Features: <br> A ‘Catch, Tag, and Release’ Mechanism for Embeddings
+            </h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <div class="author-row">
+                <span class="author-block">
+                  <a href="https://scholar.google.com/citations?hl=en&user=rrMHOLYAAAAJ&view_op=list_works&sortby=pubdate" target="_blank">Stephen Zhang</a><sup>1,2,*</sup>,</span>
+                <span class="author-block">
+                <span class="author-block">
+                  <a href="https://scholar.google.com/citations?hl=en&user=9x5vFboAAAAJ&view_op=list_works&authuser=1&sortby=pubdate" target="_blank">Mustafa Khan</a><sup>1,2,*</sup>,</span>
+                <span class="author-block">
+                  <a href="https://scholar.google.co.il/citations?hl=en&user=giB80DkAAAAJ&view_op=list_works&sortby=pubdate" target="_blank">Vardan Papyan</a><sup>1,2</sup></span>
+              </div>
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block"><sup>1</sup>University of Toronto, <sup>2</sup>Vector Institute</span>
+                    <span class="eql-cntrb"><small><br><sup>*</sup>Denotes Equal Contribution</small></span>
+                  </div>
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                      <span class="link-block">
+                        <a href="" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="ai ai-arxiv"></i>
+                        </span>
+                        <span>arXiv</span>
+                      </a>
+                      </span>
+                    </div>
+                  </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</header>
+
+<div id="form">
+  <div class="fish" id="fish"></div>
+  <div class="fish" id="fish2"></div>
+  <div id="message" class="message">
+     <h1><b>We're reeling in the final touches 🎣. Dive back later!</b></h1>
+  </div>
+</div>
+
+</body>
+</html>
