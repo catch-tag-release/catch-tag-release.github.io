@@ -1,2 +1,10 @@
-# catch-tag-release.github.io
-Project page for Catch, Tag, Release paper.
+# 🐟 **Attention Sinks and Outlier Features: A ‘Catch, Tag, and Release’ Mechanism for Embeddings**
+
+**Authors:** [Stephen Zhang](https://scholar.google.com/citations?hl=en&user=rrMHOLYAAAAJ&view_op=list_works&sortby=pubdate)*, [Mustafa Khan](https://scholar.google.com/citations?hl=en&user=9x5vFboAAAAJ&view_op=list_works&authuser=1&sortby=pubdate)*, [Vardan Papyan](https://scholar.google.co.il/citations?hl=en&user=giB80DkAAAAJ&view_op=list_works&sortby=pubdate)
+
+Large language models (LLMs) often exhibit two prominent phenomena: attention sinks and large-norm (outlier) features. While these outlier features may not seem to have semantic relevance, they play a key role in model performance, compression, and streaming. Attention sinks, a type of attention pattern, are tokens that strongly attend to a few specific tokens—despite having no obvious connection to the model's task. In this work, we present a novel framework to explain the dynamics behind these behaviors using a ‘Catch, Tag, and Release’ mechanism. Through empirical investigation, we show how attention sinks leverage outlier features to sequentially “catch” tokens, “tag” them with a common perturbation, and “release” them back into the residual stream, where they are later retrieved. We argue that this mechanism arises naturally in simple tasks like averaging, helping to explain its prevalence in modern LLMs. Our findings also demonstrate that attention sinks can be fully captured in model parameters through low-rank matrices, offering insights into model compression techniques and confirming the effectiveness of low-rank approximations in preventing performance degradation.
+
+## Acknowledgments
+This research was supported in part by the Province of Ontario, the Government of Canada through CIFAR, and industry sponsors of the Vector Institute ([www.vectorinstitute.ai/partnerships/current-partners/](https://www.vectorinstitute.ai/partnerships/current-partners/)). This research was also enabled in part by support provided by Compute Ontario ([www.computeontario.ca](https://www.computeontario.ca)) and the Digital Research Alliance of Canada ([www.alliancecan.ca](https://alliancecan.ca)).
+
+Parts of this project page were adopted from the [Nerfies](https://nerfies.github.io/) page and Geertjan Hendriks' [CodePen]([https://codepen.io/geertjanhendriks](https://codepen.io/geertjanhendriks/pen/ZEWrmd)).
